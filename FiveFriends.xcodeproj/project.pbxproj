@@ -9,14 +9,21 @@
 /* Begin PBXBuildFile section */
 		0A415D5E0168F2EBFBDC0BE1 /* Pods_FiveFriendsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02889AAA095BE431E757ABD0 /* Pods_FiveFriendsTests.framework */; };
 		7FD35168227E356A007A3B16 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD35167227E356A007A3B16 /* AppDelegate.swift */; };
-		7FD3516A227E356A007A3B16 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD35169227E356A007A3B16 /* ViewController.swift */; };
 		7FD3516D227E356A007A3B16 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FD3516B227E356A007A3B16 /* Main.storyboard */; };
 		7FD3516F227E356B007A3B16 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7FD3516E227E356B007A3B16 /* Assets.xcassets */; };
 		7FD35172227E356B007A3B16 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FD35170227E356B007A3B16 /* LaunchScreen.storyboard */; };
-		7FD3517D227E356C007A3B16 /* FiveFriendsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD3517C227E356C007A3B16 /* FiveFriendsTests.swift */; };
+		7FD3517D227E356C007A3B16 /* FriendListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD3517C227E356C007A3B16 /* FriendListTests.swift */; };
 		7FD35188227E356C007A3B16 /* FiveFriendsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD35187227E356C007A3B16 /* FiveFriendsUITests.swift */; };
 		7FD35196227E3646007A3B16 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 7FD35195227E3645007A3B16 /* Podfile */; };
 		7FD35198227E3845007A3B16 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 7FD35197227E3845007A3B16 /* .gitignore */; };
+		7FD3519A227E4DF5007A3B16 /* FiveViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD35199227E4DF5007A3B16 /* FiveViewModel.swift */; };
+		7FD3519E227E4E25007A3B16 /* FiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD3519D227E4E25007A3B16 /* FiveViewController.swift */; };
+		7FD351A0227E4EA9007A3B16 /* FriendList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD3519F227E4EA9007A3B16 /* FriendList.swift */; };
+		7FD351A2227E4EB5007A3B16 /* FriendDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD351A1227E4EB5007A3B16 /* FriendDetail.swift */; };
+		7FD351A4227E4F54007A3B16 /* FriendDetailTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD351A3227E4F54007A3B16 /* FriendDetailTests.swift */; };
+		7FD351AA227E5A06007A3B16 /* AppSheetClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD351A9227E5A06007A3B16 /* AppSheetClient.swift */; };
+		7FD351AC227E7A5D007A3B16 /* FriendTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD351AB227E7A5D007A3B16 /* FriendTableViewCell.swift */; };
+		7FD351AE227E96E7007A3B16 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD351AD227E96E7007A3B16 /* StringExtensions.swift */; };
 		834EAF70CD20B0CD60227A91 /* Pods_FiveFriendsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD7412F96A118E4D9D8A3340 /* Pods_FiveFriendsUITests.framework */; };
 		E4362230DAECAE1BCDC4F876 /* Pods_FiveFriends.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F85653D17B7E431C67A737B1 /* Pods_FiveFriends.framework */; };
 /* End PBXBuildFile section */
@@ -46,19 +53,26 @@
 		729C42546DEFF6C3EB32415B /* Pods-FiveFriends.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FiveFriends.debug.xcconfig"; path = "Target Support Files/Pods-FiveFriends/Pods-FiveFriends.debug.xcconfig"; sourceTree = "<group>"; };
 		7FD35164227E356A007A3B16 /* FiveFriends.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FiveFriends.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FD35167227E356A007A3B16 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		7FD35169227E356A007A3B16 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		7FD3516C227E356A007A3B16 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7FD3516E227E356B007A3B16 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7FD35171227E356B007A3B16 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7FD35173227E356B007A3B16 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7FD35178227E356B007A3B16 /* FiveFriendsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FiveFriendsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		7FD3517C227E356C007A3B16 /* FiveFriendsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiveFriendsTests.swift; sourceTree = "<group>"; };
+		7FD3517C227E356C007A3B16 /* FriendListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendListTests.swift; sourceTree = "<group>"; };
 		7FD3517E227E356C007A3B16 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7FD35183227E356C007A3B16 /* FiveFriendsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FiveFriendsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FD35187227E356C007A3B16 /* FiveFriendsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiveFriendsUITests.swift; sourceTree = "<group>"; };
 		7FD35189227E356C007A3B16 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7FD35195227E3645007A3B16 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; };
+		7FD35195227E3645007A3B16 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		7FD35197227E3845007A3B16 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		7FD35199227E4DF5007A3B16 /* FiveViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiveViewModel.swift; sourceTree = "<group>"; };
+		7FD3519D227E4E25007A3B16 /* FiveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiveViewController.swift; sourceTree = "<group>"; };
+		7FD3519F227E4EA9007A3B16 /* FriendList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendList.swift; sourceTree = "<group>"; };
+		7FD351A1227E4EB5007A3B16 /* FriendDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendDetail.swift; sourceTree = "<group>"; };
+		7FD351A3227E4F54007A3B16 /* FriendDetailTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendDetailTests.swift; sourceTree = "<group>"; };
+		7FD351A9227E5A06007A3B16 /* AppSheetClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSheetClient.swift; sourceTree = "<group>"; };
+		7FD351AB227E7A5D007A3B16 /* FriendTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendTableViewCell.swift; sourceTree = "<group>"; };
+		7FD351AD227E96E7007A3B16 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		96EE1B03B7BE58E66858D2A2 /* Pods-FiveFriendsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FiveFriendsUITests.release.xcconfig"; path = "Target Support Files/Pods-FiveFriendsUITests/Pods-FiveFriendsUITests.release.xcconfig"; sourceTree = "<group>"; };
 		D2C0188553EE331D72D07251 /* Pods-FiveFriendsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FiveFriendsTests.debug.xcconfig"; path = "Target Support Files/Pods-FiveFriendsTests/Pods-FiveFriendsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F85653D17B7E431C67A737B1 /* Pods_FiveFriends.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FiveFriends.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -130,12 +144,10 @@
 		7FD35166227E356A007A3B16 /* FiveFriends */ = {
 			isa = PBXGroup;
 			children = (
-				7FD35167227E356A007A3B16 /* AppDelegate.swift */,
-				7FD35169227E356A007A3B16 /* ViewController.swift */,
-				7FD3516B227E356A007A3B16 /* Main.storyboard */,
-				7FD3516E227E356B007A3B16 /* Assets.xcassets */,
-				7FD35170227E356B007A3B16 /* LaunchScreen.storyboard */,
-				7FD35173227E356B007A3B16 /* Info.plist */,
+				7FD351A6227E506D007A3B16 /* Model */,
+				7FD351A7227E5087007A3B16 /* View */,
+				7FD351A8227E5094007A3B16 /* ViewModel */,
+				7FD351A5227E505A007A3B16 /* Supporting Files */,
 			);
 			path = FiveFriends;
 			sourceTree = "<group>";
@@ -143,8 +155,9 @@
 		7FD3517B227E356C007A3B16 /* FiveFriendsTests */ = {
 			isa = PBXGroup;
 			children = (
-				7FD3517C227E356C007A3B16 /* FiveFriendsTests.swift */,
 				7FD3517E227E356C007A3B16 /* Info.plist */,
+				7FD3517C227E356C007A3B16 /* FriendListTests.swift */,
+				7FD351A3227E4F54007A3B16 /* FriendDetailTests.swift */,
 			);
 			path = FiveFriendsTests;
 			sourceTree = "<group>";
@@ -156,6 +169,46 @@
 				7FD35189227E356C007A3B16 /* Info.plist */,
 			);
 			path = FiveFriendsUITests;
+			sourceTree = "<group>";
+		};
+		7FD351A5227E505A007A3B16 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7FD35167227E356A007A3B16 /* AppDelegate.swift */,
+				7FD3516E227E356B007A3B16 /* Assets.xcassets */,
+				7FD35173227E356B007A3B16 /* Info.plist */,
+				7FD35170227E356B007A3B16 /* LaunchScreen.storyboard */,
+				7FD351AD227E96E7007A3B16 /* StringExtensions.swift */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7FD351A6227E506D007A3B16 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7FD351A9227E5A06007A3B16 /* AppSheetClient.swift */,
+				7FD351A1227E4EB5007A3B16 /* FriendDetail.swift */,
+				7FD3519F227E4EA9007A3B16 /* FriendList.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7FD351A7227E5087007A3B16 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7FD3519D227E4E25007A3B16 /* FiveViewController.swift */,
+				7FD351AB227E7A5D007A3B16 /* FriendTableViewCell.swift */,
+				7FD3516B227E356A007A3B16 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7FD351A8227E5094007A3B16 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				7FD35199227E4DF5007A3B16 /* FiveViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		ECE7B841FF4051C6E27B93FC /* Pods */ = {
@@ -457,8 +510,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7FD3516A227E356A007A3B16 /* ViewController.swift in Sources */,
+				7FD351AE227E96E7007A3B16 /* StringExtensions.swift in Sources */,
+				7FD351A0227E4EA9007A3B16 /* FriendList.swift in Sources */,
+				7FD3519E227E4E25007A3B16 /* FiveViewController.swift in Sources */,
+				7FD351AA227E5A06007A3B16 /* AppSheetClient.swift in Sources */,
+				7FD3519A227E4DF5007A3B16 /* FiveViewModel.swift in Sources */,
+				7FD351A2227E4EB5007A3B16 /* FriendDetail.swift in Sources */,
 				7FD35168227E356A007A3B16 /* AppDelegate.swift in Sources */,
+				7FD351AC227E7A5D007A3B16 /* FriendTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -466,7 +525,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7FD3517D227E356C007A3B16 /* FiveFriendsTests.swift in Sources */,
+				7FD3517D227E356C007A3B16 /* FriendListTests.swift in Sources */,
+				7FD351A4227E4F54007A3B16 /* FriendDetailTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -636,7 +696,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = J9V653T5D6;
-				INFOPLIST_FILE = FiveFriends/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/FiveFriends/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -655,7 +715,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = J9V653T5D6;
-				INFOPLIST_FILE = FiveFriends/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/FiveFriends/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
