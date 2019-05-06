@@ -21,42 +21,17 @@ class FiveViewModel {
     
     /**
      
-     Creates observable sequences from existing values in the subject and new values from client.
-     The new merged observable sequence is filtered and sorted according to business logic.
+     Filters and sorts a merged observable sequence based on business logic.
      
      Side effects
-        * Updates token from call to client.
         * Values from merged observable are emitted to the subject.
      
     */
     func performRequest() {
-        let currentFriends = (try? self.friends.value()) ?? []
-        let currentFriendsObserable = Observable.from(currentFriends)
-        
-        let newFriendsObservable = client
-            .getFriendList(withToken: token)
-            .flatMap { friendList -> Observable<FriendDetail> in
-                
-                // Side effect, cache token for future calls
-                if let token = friendList.token {
-                    self.token = token
-                }
-                
-                // Create observable for details of friends from IDs in list
-                // Ignore errors in retrieving details
-                let listObservable = Observable.from(friendList.identifiers)
-                let friendsObservable = listObservable
-                    .flatMap {
-                        self.client
-                            .getFriendDetails(forId: $0)
-                            .catchError { _ in return .empty() }
-                    }
-                return friendsObservable
-            }
+        let mergedObservable = createMergedObservable()
         
         // Apply business logic to to our data
-        Observable
-            .merge(currentFriendsObserable, newFriendsObservable)
+        mergedObservable
             .filter {
                 self.hasValidPhoneNumber($0.phoneNumber)
             }
@@ -79,14 +54,50 @@ class FiveViewModel {
                 friendsArray.sorted { $0.name < $1.name }
             }
             .subscribe(
-                onNext: { friendsArray in
-                    self.friends.onNext(friendsArray)
+                onNext: { [weak self] friendsArray in
+                    self?.friends.onNext(friendsArray)
                 },
                 onError: { error in
                     self.friends.onError(error)
                 }
             )
             .disposed(by: disposeBag)
+    }
+    
+    
+    /**
+     
+     Creates an observable sequence from current values in our subject and new values from client.
+     
+     Side effects
+        * Updates token from call to client.
+    */
+    func createMergedObservable() -> Observable<FriendDetail> {
+        let currentFriends = (try? self.friends.value()) ?? []
+        let currentFriendsObserable = Observable.from(currentFriends)
+        
+        let newFriendsObservable = client
+            .getFriendList(withToken: token)
+            .flatMap { friendList -> Observable<FriendDetail> in
+                
+                // Side effect, cache token for future calls
+                if let token = friendList.token {
+                    self.token = token
+                }
+                
+                // Create observable for details of friends from IDs in list
+                // Ignore errors in retrieving details
+                let listObservable = Observable.from(friendList.identifiers)
+                let friendsObservable = listObservable
+                    .flatMap {
+                        self.client
+                            .getFriendDetails(forId: $0)
+                            .catchError { _ in return .empty() }
+                }
+                return friendsObservable
+        }
+        
+        return Observable.merge(currentFriendsObserable, newFriendsObservable)
     }
     
 
