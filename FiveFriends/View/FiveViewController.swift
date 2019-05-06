@@ -3,37 +3,46 @@ import RxCocoa
 
 class FiveViewController: UIViewController {
 
-    let viewModel = FiveViewModel()
-    let disposeBag = DisposeBag()
+    private let viewModel = FiveViewModel()
+    private let disposeBag = DisposeBag()
     
     @IBOutlet var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setupTableView()
+        setupRefreshControl()
+        viewModel.performRequest()
+    }
+    
+    private func setupTableView() {
+        
+        // Bind data to our tableView
         viewModel.friends
             .bind(to: tableView
                 .rx
-                .items(cellIdentifier: FriendTableViewCell.identifier, cellType: FriendTableViewCell.self))
-            { (row, element, cell) in
-                cell.profilePicture.image = UIImage(named: "prototype-profile")
-                cell.nameAgeLabel.text = "\(element.name), \(element.age)"
-                cell.phoneNumberLabel.text = element.phoneNumber
-                cell.bioTextView.text = element.biography
+                .items(cellIdentifier: FriendTableViewCell.identifier,
+                       cellType: FriendTableViewCell.self)) { (_, element, cell) in
+                cell.configure(with: element)
             }
             .disposed(by: disposeBag)
-        
+    }
+    
+    private func setupRefreshControl() {
         tableView.refreshControl = UIRefreshControl()
+        
+        // Get more data on pull-to-refresh
         tableView.refreshControl?
             .rx
             .controlEvent(.valueChanged)
             .subscribe(
                 onNext: { [weak self] in
-                    self?.viewModel.doRequest()
+                    self?.viewModel.performRequest()
                 }
             )
             .disposed(by: disposeBag)
         
+        // Perform a UI action based on result from view model
         viewModel.friends
             .observeOn(MainScheduler.instance)
             .subscribe(
@@ -45,7 +54,5 @@ class FiveViewController: UIViewController {
                 }
             )
             .disposed(by: disposeBag)
-        
-        viewModel.doRequest()
     }
 }

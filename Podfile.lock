@@ -1,4 +1,5 @@
 PODS:
+  - Nuke (7.6.3)
   - RxBlocking (5.0.0):
     - RxSwift (~> 5)
   - RxCocoa (5.0.0):
@@ -11,6 +12,7 @@ PODS:
     - RxSwift (~> 5)
 
 DEPENDENCIES:
+  - Nuke (~> 7.6)
   - RxBlocking (~> 5)
   - RxCocoa (~> 5)
   - RxSwift (~> 5)
@@ -18,6 +20,7 @@ DEPENDENCIES:
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - Nuke
     - RxBlocking
     - RxCocoa
     - RxRelay
@@ -25,12 +28,13 @@ SPEC REPOS:
     - RxTest
 
 SPEC CHECKSUMS:
+  Nuke: 44130e95e09463f8773ae4b96b90de1eba6b3350
   RxBlocking: c67185d26498ea3cbe3e121917c3c16739e43123
   RxCocoa: fcf32050ac00d801f34a7f71d5e8e7f23026dcd8
   RxRelay: 4f7409406a51a55cd88483f21ed898c234d60f18
   RxSwift: 8b0671caa829a763bbce7271095859121cbd895f
   RxTest: 4349afe98f564e0a9bc19063368904622d17d49a
 
-PODFILE CHECKSUM: 7537f13e95351fa98cee6104f8c2f0768d8721d8
+PODFILE CHECKSUM: 47c0cc498181bc5f5b2e429e73207bef5722b9e2
 
 COCOAPODS: 1.6.1

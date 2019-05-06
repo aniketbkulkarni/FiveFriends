@@ -24,6 +24,7 @@
 		7FD351AA227E5A06007A3B16 /* AppSheetClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD351A9227E5A06007A3B16 /* AppSheetClient.swift */; };
 		7FD351AC227E7A5D007A3B16 /* FriendTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD351AB227E7A5D007A3B16 /* FriendTableViewCell.swift */; };
 		7FD351AE227E96E7007A3B16 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD351AD227E96E7007A3B16 /* StringExtensions.swift */; };
+		7FD351B2227F9F38007A3B16 /* FiveViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD351B1227F9F38007A3B16 /* FiveViewModelTests.swift */; };
 		834EAF70CD20B0CD60227A91 /* Pods_FiveFriendsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD7412F96A118E4D9D8A3340 /* Pods_FiveFriendsUITests.framework */; };
 		E4362230DAECAE1BCDC4F876 /* Pods_FiveFriends.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F85653D17B7E431C67A737B1 /* Pods_FiveFriends.framework */; };
 /* End PBXBuildFile section */
@@ -73,6 +74,8 @@
 		7FD351A9227E5A06007A3B16 /* AppSheetClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSheetClient.swift; sourceTree = "<group>"; };
 		7FD351AB227E7A5D007A3B16 /* FriendTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendTableViewCell.swift; sourceTree = "<group>"; };
 		7FD351AD227E96E7007A3B16 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
+		7FD351B1227F9F38007A3B16 /* FiveViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiveViewModelTests.swift; sourceTree = "<group>"; };
+		7FD351B3227FA293007A3B16 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		96EE1B03B7BE58E66858D2A2 /* Pods-FiveFriendsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FiveFriendsUITests.release.xcconfig"; path = "Target Support Files/Pods-FiveFriendsUITests/Pods-FiveFriendsUITests.release.xcconfig"; sourceTree = "<group>"; };
 		D2C0188553EE331D72D07251 /* Pods-FiveFriendsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FiveFriendsTests.debug.xcconfig"; path = "Target Support Files/Pods-FiveFriendsTests/Pods-FiveFriendsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F85653D17B7E431C67A737B1 /* Pods_FiveFriends.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FiveFriends.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -126,6 +129,7 @@
 				7FD35165227E356A007A3B16 /* Products */,
 				ECE7B841FF4051C6E27B93FC /* Pods */,
 				13F5E5B2921CBE101FBDD76C /* Frameworks */,
+				7FD351B3227FA293007A3B16 /* README.md */,
 				7FD35195227E3645007A3B16 /* Podfile */,
 				7FD35197227E3845007A3B16 /* .gitignore */,
 			);
@@ -158,6 +162,7 @@
 				7FD3517E227E356C007A3B16 /* Info.plist */,
 				7FD3517C227E356C007A3B16 /* FriendListTests.swift */,
 				7FD351A3227E4F54007A3B16 /* FriendDetailTests.swift */,
+				7FD351B1227F9F38007A3B16 /* FiveViewModelTests.swift */,
 			);
 			path = FiveFriendsTests;
 			sourceTree = "<group>";
@@ -416,6 +421,7 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-FiveFriends/Pods-FiveFriends-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Nuke/Nuke.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxRelay/RxRelay.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
@@ -424,6 +430,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nuke.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRelay.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
@@ -525,6 +532,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7FD351B2227F9F38007A3B16 /* FiveViewModelTests.swift in Sources */,
 				7FD3517D227E356C007A3B16 /* FriendListTests.swift in Sources */,
 				7FD351A4227E4F54007A3B16 /* FriendDetailTests.swift in Sources */,
 			);

@@ -5,6 +5,7 @@ use_frameworks!
 target 'FiveFriends' do
     pod 'RxSwift', '~> 5'
     pod 'RxCocoa', '~> 5'
+    pod 'Nuke', '~> 7.6'
 end
 
 target 'FiveFriendsTests' do

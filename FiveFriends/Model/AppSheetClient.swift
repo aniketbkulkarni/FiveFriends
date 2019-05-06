@@ -1,8 +1,8 @@
 import RxSwift
 
 protocol AppSheetClientProtocol {
-    func getUserList(withToken token: String?) -> Observable<FriendList>
-    func getUserDetails(forId id: Int) -> Observable<FriendDetail>
+    func getFriendList(withToken token: String?) -> Observable<FriendList>
+    func getFriendDetails(forId id: Int) -> Observable<FriendDetail>
 }
 
 class AppSheetClient: AppSheetClientProtocol {
@@ -13,9 +13,9 @@ class AppSheetClient: AppSheetClientProtocol {
         self.session = session
     }
     
-    func getUserList(withToken token: String?) -> Observable<FriendList> {
+    func getFriendList(withToken token: String?) -> Observable<FriendList> {
         return Observable<FriendList>.create { observer in
-            let request = self.createUserListRequest(withToken: token)
+            let request = self.createFriendListRequest(withToken: token)
             let task = self.session.dataTask(with: request) { (data, response, error) in
                 do {
                     let response = try JSONDecoder().decode(FriendList.self, from: data ?? Data())
@@ -33,10 +33,9 @@ class AppSheetClient: AppSheetClientProtocol {
         }
     }
     
-    func getUserDetails(forId id: Int) -> Observable<FriendDetail> {
+    func getFriendDetails(forId id: Int) -> Observable<FriendDetail> {
         return Observable<FriendDetail>.create { observer in
-            let request = self.createUserDetailsRequest(forId: id)
-            print(request.debugDescription)
+            let request = self.createFriendDetailsRequest(forId: id)
             let task = self.session.dataTask(with: request) { (data, response, error) in
                 do {
                     let response = try JSONDecoder().decode(FriendDetail.self, from: data ?? Data())
@@ -54,7 +53,7 @@ class AppSheetClient: AppSheetClientProtocol {
         }
     }
     
-    private func createUserListRequest(withToken token: String?) -> URLRequest {
+    private func createFriendListRequest(withToken token: String?) -> URLRequest {
         var components = URLComponents()
         components.scheme = "https"
         components.host = "appsheettest1.azurewebsites.net"
@@ -71,7 +70,7 @@ class AppSheetClient: AppSheetClientProtocol {
         return request
     }
     
-    private func createUserDetailsRequest(forId id: Int) -> URLRequest {
+    private func createFriendDetailsRequest(forId id: Int) -> URLRequest {
         var components = URLComponents()
         components.scheme = "https"
         components.host = "appsheettest1.azurewebsites.net"
