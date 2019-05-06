@@ -17,6 +17,8 @@ class FiveViewController: UIViewController {
     
     private func setupTableView() {
         
+        tableView.rowHeight = UITableView.automaticDimension
+        
         // Bind data to our tableView
         viewModel.friends
             .bind(to: tableView

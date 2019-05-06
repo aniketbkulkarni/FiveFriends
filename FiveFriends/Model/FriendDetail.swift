@@ -1,5 +1,4 @@
 import Foundation
-import RxDataSources
 
 struct FriendDetail: Decodable, Hashable {
     

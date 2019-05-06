@@ -33,6 +33,7 @@ class FiveViewModel {
                 }
                 
                 // Create observable for details of friends from IDs in list
+                // Ignore errors in retrieving details
                 let listObservable = Observable.from(friendList.identifiers)
                 let friendsObservable = listObservable
                     .flatMap {
