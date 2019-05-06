@@ -13,6 +13,12 @@ class AppSheetClient: AppSheetClientProtocol {
         self.session = session
     }
     
+    /**
+     Creates an observable wrapping a list of user id's and optionally a token.
+     
+     - Parameter token: A cached token to get a new list of users.
+     - Returns: Observable `FriendList`.
+    */
     func getFriendList(withToken token: String?) -> Observable<FriendList> {
         return Observable<FriendList>.create { observer in
             let request = self.createFriendListRequest(withToken: token)
@@ -33,6 +39,12 @@ class AppSheetClient: AppSheetClientProtocol {
         }
     }
     
+    /**
+     Creates an observable containing information for a particular user.
+     
+     - Parameter id: Identifier for a given user.
+     - Returns: Observable `FriendDetail`.
+     */
     func getFriendDetails(forId id: Int) -> Observable<FriendDetail> {
         return Observable<FriendDetail>.create { observer in
             let request = self.createFriendDetailsRequest(forId: id)

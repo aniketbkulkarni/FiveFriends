@@ -21,6 +21,7 @@ class FiveViewController: UIViewController {
         
         // Bind data to our tableView
         viewModel.friends
+            .catchErrorJustReturn([])
             .bind(to: tableView
                 .rx
                 .items(cellIdentifier: FriendTableViewCell.identifier,

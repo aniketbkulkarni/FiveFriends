@@ -33,4 +33,14 @@ struct FriendDetail: Decodable, Hashable {
             photoUrl = nil
         }
     }
+    
+    // Initializer to use for testing
+    init(userId: Int, name: String, age: Int, phoneNumber: String) {
+        self.userId = userId
+        self.name = name
+        self.age = age
+        self.phoneNumber = phoneNumber
+        self.biography = ""
+        self.photoUrl = nil
+    }
 }

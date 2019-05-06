@@ -15,4 +15,10 @@ struct FriendList: Decodable {
         self.identifiers = try container.decode([Int].self, forKey: .identifiers)
         self.token = try container.decodeIfPresent(String.self, forKey: .token)
     }
+    
+    // Initializer to use for testing
+    init(identifiers: [Int] = [], token: String? = nil) {
+        self.identifiers = identifiers
+        self.token = token
+    }
 }

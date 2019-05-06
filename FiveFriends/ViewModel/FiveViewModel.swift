@@ -19,6 +19,16 @@ class FiveViewModel {
         self.disposeBag = disposeBag
     }
     
+    /**
+     
+     Creates observable sequences from existing values in the subject and new values from client.
+     The new merged observable sequence is filtered and sorted according to business logic.
+     
+     Side effects
+        * Updates token from call to client.
+        * Values from merged observable are emitted to the subject.
+     
+    */
     func performRequest() {
         let currentFriends = (try? self.friends.value()) ?? []
         let currentFriendsObserable = Observable.from(currentFriends)
@@ -50,6 +60,8 @@ class FiveViewModel {
             .filter {
                 self.hasValidPhoneNumber($0.phoneNumber)
             }
+            
+            // Convert to Observable<[FriendDetail]>
             .toArray()
             .asObservable()
             
@@ -77,7 +89,14 @@ class FiveViewModel {
             .disposed(by: disposeBag)
     }
     
-    // https://stackoverflow.com/questions/16699007
+
+    /**
+     Check if the user has a valid 10 digit phone number.
+     
+     Regex taken from https://stackoverflow.com/questions/16699007
+     
+     See `FiveViewModelTests#testPhoneNumberValidator()` for examples.
+    */
     func hasValidPhoneNumber(_ number: String) -> Bool {
         let PHONE_REGEX = "^(\\+\\d{1,2}\\s)?\\(?\\d{3}\\)?[\\s.-]\\d{3}[\\s.-]\\d{4}$"
         let phoneTest = NSPredicate(format: "SELF MATCHES %@", PHONE_REGEX)
